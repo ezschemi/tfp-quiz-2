@@ -1,0 +1,32 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Add yourself, visitor!</h1>
+<%= simple_form_for @visitor do |f| %>
+  <%= f.input :name %>
+  <%= f.input :country %>
+  <%= f.button :submit, "Add" %>
+<% end %>
+
+<h1><%= @visitors.count %> Visitors</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Country</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @visitors.each do |visitor| %>
+      <tr>
+        <td><%= visitor.name %></td>
+        <td><%= visitor.country %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
