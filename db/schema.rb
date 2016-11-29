@@ -12,6 +12,9 @@
 
 ActiveRecord::Schema.define(version: 20161129122404) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "visitors", force: :cascade do |t|
     t.string   "name"
     t.string   "country"
